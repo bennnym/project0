@@ -53,8 +53,6 @@ const tictactoe = {
     } else if ([...new Set([this.board[3],this.board[5],this.board[7]])].length === 1){
       return 'diagonal-left'
     };
-    }
-  }
-
-
-console.log(tictactoe.winningCombination())
+  },
+};
+  

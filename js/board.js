@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  
+  // $('#tictactoe').hide()
 
   Swal.mixin({ // gets user names to play the game and saves the names in variables
   input: 'text',
@@ -23,6 +25,8 @@ $(document).ready(function(){
     })
     player1 = result.value[0];
     player2 = result.value[1];
+    playerScores[player1] = 0;
+    playerScores[player2] = 0;
     move = player1;
     $('h3').text(`${player1}'s move`)
 
@@ -34,6 +38,7 @@ $(document).ready(function(){
   $('svg').hide()
   $('button').hide()
   $('p').hide()
+  $('span').hide()
 
   const gameLoop = function(  ) { //main game loop
     $('td').on('click',function(){
@@ -64,9 +69,21 @@ $(document).ready(function(){
     $('i').removeClass('fas fa-times')
     $('i').removeClass('fas fa-circle')
     tictactoe.clearboard()
-    $('.button').hide()
+    $('button').hide()
     $('h3').text(`${move}, you get to go first this time!`)
     gameLoop()
+  });
+  
+  $('.score').on('click',function(){
+    Swal.fire({
+    title: 'Score Update',
+    text: `${player1.toUpperCase()}: ${playerScores[player1]} VS ${player2.toUpperCase()}: ${playerScores[player2]}`,
+    imageUrl: '/Users/benmuller/Projects/tictactoe/img/fight.gif',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+    animation: false
+})
   });
   
   gameLoop()
@@ -77,6 +94,7 @@ $(document).ready(function(){
 let move;
 let player1;
 let player2;
+const playerScores = {}
 
 const turn = function(  ) { //changes the players turn after each go
   move === player1 ? move = player2 : move = player1
@@ -84,6 +102,7 @@ const turn = function(  ) { //changes the players turn after each go
 
 const win = function(  ) { //checks for a win and makes changes accordingly
   if ( tictactoe.checkForWin() ){
+    playerScores[move] += 1;
     $('p').text(`${move} WINS!`)
           .show()
           $('td').off()
@@ -91,6 +110,8 @@ const win = function(  ) { //checks for a win and makes changes accordingly
     $('rect').addClass(tictactoe.winningCombination())
     $('svg').show()  
     $('button').show()
+    
+    
   }
 };
 
@@ -102,4 +123,10 @@ const draw = function ( ){ // checks for a draw and configs changes accordingly
     $('td').off()
   }
 };
+
+
+
+
+
+
 
