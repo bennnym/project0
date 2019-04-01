@@ -1,0 +1,17 @@
+* {
+  border: solid 2px green;
+}
+
+line {
+  width: 0;
+}
+
+@keyframes widen {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+svg {
+  animation-name: widen;
+  animation-duration: 4s;
+}

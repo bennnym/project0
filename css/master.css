@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
+
+* {
+  border: solid 2px green;
+  text-align: center;
+  font-family: 'Baloo Chettan', cursive;
+}
+
+body {
+  background-color: black;
+}
+
+h1 {
+  color: white;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-style: hidden;
+  width: 40%;
+  height: 50%;
+  margin-top: 5em;
+  border-radius: 2em;
+  background-color: black;
+  flex-direction: column;
+}
+
+table td {
+  border: 8px solid white;
+  height: 5em;
+  width: 33%;
+  border-radius: 2em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 26em;
+}
+
+i {
+  font-size: 55px;
+}
+
+.fa-circle {
+  color: rgb(30, 130, 222);
+}
+
+.fa-times {
+  color: rgb(222, 23, 17); 
+}
+
+td:hover {
+  background-color: rgb(231, 144, 14);
+}
+
+p {
+  color: white;
+  font-weight: bolder;
+}
+
+.win-line {
+  justify-content: center;
+  display: flex;
+  height: 26em;
+  flex-grow: 1;
+}
+
+svg {
+  z-index: 1;
+  position: absolute;
+  height: 26em;
+  width: 40em;
+}
+
+rect {
+  z-index: 100;
+  height: 346px;
+  x: 239.5;
+  y: 44;
+  animation-name: win;
+  animation-duration: 4s;
+}
+
+@keyframes win {
+  from {height: 0;}
+  to {height: 346px;}
+}
+
+.middle-down {
+  z-index: 100;
+  height: 330px;
+  x: 311.3;
+  y: 44;
+  animation-name: win;
+  animation-duration: 4s;
+}
+
+.down-left {
+  z-index: 100;
+  height: 330px;
+  x: 121.5;
+  y: 44;
+  animation-name: win;
+  animation-duration: 2s;
+}
+
+.down-right {
+  z-index: 100;
+  height: 330px;
+  x: 498.3;
+  y: 44;
+  animation-name: win;
+  animation-duration: 4s;
+}
+
+@keyframes win-middle {
+  from {width: 0;}
+  to {width: 600px;}
+}
+
+.side-top {
+  z-index: 100;
+  height: 16px;
+  x: 18.5;
+  y: 108;
+  width: 600px;
+  animation-name: win-middle;
+  animation-duration: 4s;
+}
+
+.side-middle {
+  z-index: 100;
+  height: 16px;
+  x: 18.5;
+  y: 198;
+  width: 600px;
+  animation-name: win-middle;
+  animation-duration: 4s;
+}
+
+.side-bottom {
+  z-index: 100;
+  height: 16px;
+  x: 18.5;
+  y: 289;
+  width: 600px;
+  animation-name: win-middle;
+  animation-duration: 4s;
+}
+
+@keyframes win-diagonal {
+  from {height: 0  ;}
+  to {height: 594px;}
+}
+
+.diagonal-left {
+    z-index: 100;
+    height: 594px;
+    x: 321.5;
+    y: -474;
+    animation-name: win-diagonal;
+    animation-duration: 2s;
+    transform: rotate(63deg);
+}
+
+.diagonal-right {
+    z-index: 100;
+    height: 594px;
+    x: 31.5;
+    y: -669;
+    animation-name: win-diagonal;
+    animation-duration: 2s;
+    transform: rotate(117deg);
+}
