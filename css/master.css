@@ -1,17 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
 
 * {
-  border: solid 2px green;
+  /* border: solid 2px green; */
   text-align: center;
   font-family: 'Baloo Chettan', cursive;
 }
 
 body {
-  background-color: black;
+  background-color: rgb(77, 76, 76);
 }
 
 h1 {
   color: white;
+  font-size: 60px;
+}
+
+h3 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 35px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgb(224, 130, 120);
 }
 
 
@@ -22,7 +32,7 @@ table {
   height: 50%;
   margin-top: 5em;
   border-radius: 2em;
-  background-color: black;
+  background-color: rgb(77, 76, 76);
   flex-direction: column;
 }
 
@@ -52,12 +62,16 @@ i {
 }
 
 td:hover {
-  background-color: rgb(231, 144, 14);
+  background-color: rgb(71, 103, 89);
 }
 
 p {
   color: white;
   font-weight: bolder;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 2px;
 }
 
 .win-line {
@@ -94,7 +108,7 @@ rect {
   x: 311.3;
   y: 44;
   animation-name: win;
-  animation-duration: 4s;
+  animation-duration: 1s;
 }
 
 .down-left {
@@ -103,7 +117,7 @@ rect {
   x: 121.5;
   y: 44;
   animation-name: win;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 .down-right {
@@ -112,7 +126,7 @@ rect {
   x: 498.3;
   y: 44;
   animation-name: win;
-  animation-duration: 4s;
+  animation-duration: 1s;
 }
 
 @keyframes win-middle {
@@ -127,7 +141,7 @@ rect {
   y: 108;
   width: 600px;
   animation-name: win-middle;
-  animation-duration: 4s;
+  animation-duration: 1s;
 }
 
 .side-middle {
@@ -137,7 +151,7 @@ rect {
   y: 198;
   width: 600px;
   animation-name: win-middle;
-  animation-duration: 4s;
+  animation-duration: 1s;
 }
 
 .side-bottom {
@@ -147,7 +161,7 @@ rect {
   y: 289;
   width: 600px;
   animation-name: win-middle;
-  animation-duration: 4s;
+  animation-duration: 1s;
 }
 
 @keyframes win-diagonal {
@@ -161,7 +175,7 @@ rect {
     x: 321.5;
     y: -474;
     animation-name: win-diagonal;
-    animation-duration: 2s;
+    animation-duration: 1s;
     transform: rotate(63deg);
 }
 
@@ -171,6 +185,17 @@ rect {
     x: 31.5;
     y: -669;
     animation-name: win-diagonal;
-    animation-duration: 2s;
+    animation-duration: 1s;
     transform: rotate(117deg);
+}
+
+.button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 4px;
+  padding: 12px 28px;
+  font-size: 16px;
+  background-color: rgb(6, 101, 7);
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
 }
