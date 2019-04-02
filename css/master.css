@@ -353,3 +353,29 @@ input:disabled {
 .hint {
   background-color: rgb(236, 81, 81);
 }
+
+#home {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 4px;
+  padding: 12px 48px;
+  font-size: 16px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  text-transform: capitalize;
+  background-color: rgb(146, 83, 162)
+}
+
+.go-home {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 4px;
+  padding: 12px 48px;
+  font-size: 16px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  text-transform: capitalize;
+  background-color: rgb(146, 83, 162)
+}

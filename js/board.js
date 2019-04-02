@@ -3,14 +3,15 @@ $(document).ready(function(){
   
   $('#game').change(function(){
   game = $("option:selected").val();
-  $('#game').addClass('none');
-  $('#h1').addClass('none');
-  gameToPlay(game);
+  if (game === 'Sudoku' || game === 'Tic-Tac-Toe'){
+    $('#game').addClass('none');
+    $('#h1').addClass('none');
+    gameToPlay(game);
+  };
   });
   
   const gameToPlay = function( game ) {
     if (game === 'Tic-Tac-Toe'){
-      console.log('works')
       $('#tictactoe').removeClass('none');
       Swal.mixin({ // gets user names to play the game and saves the names in variables
       input: 'text',
@@ -38,7 +39,7 @@ $(document).ready(function(){
         playerScores[player1] = 0;
         playerScores[player2] = 0;
         move = player1;
-        $('h3').text(`${player1}'s move`)
+        $('.player-turn').text(`${player1}'s move`)
     
       } else {
         $('td').off()
@@ -55,13 +56,14 @@ $(document).ready(function(){
   $('svg').hide()
   $('.button').hide()
   $('.score').hide()
+  $('.go-home').hide()
   $('p').hide()
   $('span').hide()
 
   const gameLoop = function(  ) { //main game loop
     $('td').on('click',function(){
       if (move === player1 ){ //player1 move
-      $('h3').text(`${player2}'s move`)
+      $('.player-turn').text(`${player2}'s move`)
       $(this).children('i').addClass('fas fa-circle').hide().fadeIn(500);
       tictactoe.board[$(this).attr('id')] = 'X';
       win()
@@ -69,7 +71,7 @@ $(document).ready(function(){
       $(this).off()
       turn()
     } else { //player 2 move
-      $('h3').text(`${player1}'s move`)
+      $('.player-turn').text(`${player1}'s move`)
       $(this).children('i').addClass('fas fa-times').hide().fadeIn(500);
       tictactoe.board[$(this).attr('id')] = 'O';
       win()
@@ -89,7 +91,8 @@ $(document).ready(function(){
     tictactoe.clearboard();
     $('.button').hide();
     $('.score').hide();
-    $('h3').text(`${move}, you get to go first this time!`);
+    $('.go-home').hide();
+    $('.player-turn').text(`${move}, you get to go first this time!`);
     gameLoop();
   });
   
@@ -105,6 +108,12 @@ $(document).ready(function(){
 })
   });
   
+  $('.go-home').on('click',function(){
+    $('#game').removeClass('none');
+    $('#h1').removeClass('none');
+    $('#tictactoe').addClass('none');
+  })
+  
   gameLoop()
   
   //////////SUDOKU LOGIC STARTS HERE///////////////
@@ -114,7 +123,7 @@ $(document).ready(function(){
     let difficulty = $(this).text()
     sudokuBoard = sudoku.generate(`${difficulty}`)
     fillSudokuBoard(sudokuBoard)
-    $('h3').hide()
+    $('.choose').hide()
     $('.difficulty').addClass('hidden');
     $('.hide').addClass('secondary').removeClass('hide')
   })
@@ -156,12 +165,17 @@ $(document).ready(function(){
   
   
   $('#play-again').on('click',function(){
-    $('h3').fadeIn(300)
+    $('.choose').fadeIn(300)
     $('.difficulty').removeClass('hidden').fadeIn(300);
     $('.secondary').addClass('hide');
     $('input').val('').removeClass('fixed')
   })
   
+  $('#home').on('click',function(){ // home button in Sudoku
+    $('#sudoku').addClass('none');
+    $('#game').removeClass('none');
+    $('#h1').removeClass('none');
+  })
   
   
 });
@@ -192,6 +206,7 @@ const win = function(  ) { //checks for a win and makes changes accordingly
     $('svg').show();
     $('.button').show();
     $('.score').show();
+    $('.go-home').show();
     
     
   }
@@ -203,6 +218,7 @@ const draw = function ( ){ // checks for a draw and configs changes accordingly
           .show();
     $('.button').show();
     $('.score').show();
+    $('.go-home').show();
     $('td').off();
   }
 };
