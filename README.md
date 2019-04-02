@@ -6,15 +6,11 @@ The result for my project is a web app with multiple games such as Sudoku and Ti
 
 You can play the game [here](https://bennnym.github.io/project0/).
 
-## Key Point
-The codebase was built to minimise repeatable code. 
-
-
 ## Instructions
 
 **Tic Tac Toe:**
-Players: Two
-Rules: [Here](https://en.wikipedia.org/wiki/Tic-tac-toe).
+* Players: Two
+* Rules: [Here](https://en.wikipedia.org/wiki/Tic-tac-toe).
 
 **Sudoku**
 Players: One
