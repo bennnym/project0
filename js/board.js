@@ -127,10 +127,6 @@ $(document).ready(function(){
     $('.difficulty').addClass('hidden');
     $('.hide').addClass('secondary').removeClass('hide')
   })
-  
-  $('input').keyup(function(e){
-    console.log(typeof e.key)
-  })
 
   const fillSudokuBoard = function( board ) {
     board = board.split('')
@@ -168,7 +164,8 @@ $(document).ready(function(){
     $('.choose').fadeIn(300)
     $('.difficulty').removeClass('hidden').fadeIn(300);
     $('.secondary').addClass('hide');
-    $('input').val('').removeClass('fixed')
+    $('input').val('').removeClass('fixed').removeAttr('readonly')
+    $('.winning').hide()
   })
   
   $('#home').on('click',function(){ // home button in Sudoku
