@@ -379,3 +379,7 @@ input:disabled {
   text-transform: capitalize;
   background-color: rgb(146, 83, 162)
 }
+
+.choose {
+  margin-bottom: 15px;
+}
