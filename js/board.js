@@ -149,13 +149,19 @@ $(document).ready(function(){
   confirmButtonText: 'Yes, Solve it!'
 }).then((result) => {
   if (result.value) {
-    solveBoardEffect()
-    
+    solveBoardEffect()  
   };
-})
+});
+});
+  
+  
+  $('#play-again').on('click',function(){
+    $('h3').fadeIn(300)
+    $('.difficulty').removeClass('hidden').fadeIn(300);
+    $('.secondary').addClass('hide');
+    $('input').val('').removeClass('fixed')
   })
   
-  $('#play-again').on('click')
   
   
 });
@@ -233,20 +239,30 @@ const hint = function(  ) { // should check to see if all input is correct and i
   const solveBoardEffect = function(  ) {
     let stringSudoku = $('input').map((i, element) => $(element).val() >= 1 ? $(element).val():'.').get().join('')
     stringSudoku = stringSudoku.slice(0,81)
-    console.log(stringSudoku)
     let solvedBoard = sudoku.solve(stringSudoku)
     stringSudoku = stringSudoku.split('')
-    const sleep = function(ms) { // allows the hint to show and then go 
-      return new Promise(resolve => setTimeout(resolve, ms));
+    
+    if (stringSudoku.indexOf('.') >= 0){
+      const sleep = function(ms) { // allows the hint to show and then go 
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      let i = 0;
+      while (stringSudoku.indexOf('.') !== -1){
+        let index = stringSudoku.indexOf('.'); // gets the index of the empty val
+        stringSudoku[index] = solvedBoard[index]
+        sleep(100 * i++).then(function() {
+          $(`#cell-${index}`).val(solvedBoard[index])
+        });
+      };
+    } else { //check to see if the players input it correct 
+      if (stringSudoku.join('') === solvedBoard){
+        $('.winning').fadeIn(300).text('Congratulations you are the Sudoku Master!')
+      } else {
+        $('.winning').fadeIn(300).text('Hmmm, you have an error somewhere. Keep trying.')
+      }
     }
-    let i = 0;
-    while (stringSudoku.indexOf('.') !== -1){
-      let index = stringSudoku.indexOf('.'); // gets the index of the empty val
-      stringSudoku[index] = solvedBoard[index]
-      sleep(200 * i++).then(function() {
-        $(`#cell-${index}`).val(solvedBoard[index])
-      });
-    };
+
+    
     
       
   };
