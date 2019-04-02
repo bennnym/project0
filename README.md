@@ -26,7 +26,7 @@ Note: The solve button has multiple configurations:
 * If the board has been input incorrectly the player will receive a hint about the errrors.
 
 ## Tools
-HTML, CSS, and Javascript
-Libraries: jQuery, math.js, Sudoku.js
-Plugins: SweetAlert2
-Other: Awesome Fonts
+* HTML, CSS, and Javascript.
+* Libraries: jQuery, math.js, Sudoku.js.
+* Plugins: SweetAlert2.
+* Other: Awesome Fonts.
