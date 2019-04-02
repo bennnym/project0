@@ -1,4 +1,4 @@
-# ![](/Users/benmuller/Projects/tictactoe/img/ga.png) SEI-31 Project 0: Tic-Tac-Toe
+# ![](img/ga.png) SEI-31 Project 0: Tic-Tac-Toe
 
 This was developed as part of SEI 31 Project 0, the goal was to build a web application from scratch, without a starter codebase, and to use programming skills to map out the game logic for a simple game like Tic Tac Toe.
 
