@@ -39,7 +39,7 @@ $(document).ready(function(){
         playerScores[player1] = 0;
         playerScores[player2] = 0;
         move = player1;
-        $('.player-turn').text(`${player1}'s move`)
+        $('.player-turn').text(`${player1}s move`)
     
       } else {
         $('td').off()
