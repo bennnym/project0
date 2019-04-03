@@ -123,7 +123,7 @@ $(document).ready(function(){
     let difficulty = $(this).text()
     sudokuBoard = sudoku.generate(`${difficulty}`)
     fillSudokuBoard(sudokuBoard)
-    $('.choose').hide()
+    $('.choose').addClass('invisible')
     $('.difficulty').addClass('hidden');
     $('.hide').addClass('secondary').removeClass('hide')
   })
@@ -162,7 +162,7 @@ $(document).ready(function(){
   
   
   $('#play-again').on('click',function(){
-    $('.choose').fadeIn(300)
+    $('.choose').fadeIn(300).text('Please select a difficulty:')
     $('.difficulty').removeClass('hidden').fadeIn(300);
     $('.secondary').addClass('hide');
     $('input').val('').removeClass('fixed').removeAttr('readonly')
@@ -270,7 +270,7 @@ const hint = function(  ) { // should check to see if all input is correct and i
       };
     } else { //check to see if the players input it correct 
       if (stringSudoku.join('') === solvedBoard){
-        $('.winning').fadeIn(300).text('Congratulations you are the Sudoku Master!')
+        $('.choose').removeClass('invisible').fadeIn(300).text('Congratulations you are the Sudoku Master!')
       } else {
         let solution = sudoku.solve(sudokuBoard)
         let errors = []
@@ -289,8 +289,7 @@ const hint = function(  ) { // should check to see if all input is correct and i
             $(`#cell-${nums}`).removeClass('hint')
           }})
         
-        console.log(errors)
-        $('.winning').fadeIn(300).text('You have an error somewhere. Watch the board for a hint.')
+        $('.choose').removeClass('invisible').fadeIn(300).text('You have an error somewhere. Watch the board for a hint.')
       };
     };
 

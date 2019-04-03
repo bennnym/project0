@@ -11,6 +11,8 @@ body {
 }
 
 h1 {
+  margin-bottom: 1vh;
+  margin-top: -2vh;
   color: white;
   font-size: 60px;
   text-transform: uppercase;
@@ -232,7 +234,7 @@ img {
 #game {
   text-align: center;
   padding-top: 30%;
-  font-size: 25px;
+  font-size: 3vh;
   width: 20%;
 }
 
@@ -383,4 +385,8 @@ input:disabled {
 
 .choose {
   margin-bottom: 15px;
+}
+
+.invisible {
+  visibility: hidden;
 }
