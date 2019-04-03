@@ -9,17 +9,17 @@ You can play the game [here](https://bennnym.github.io/project0/).
 ## Instructions
 
 **Tic Tac Toe:**
-* Players: Two
+* Players: Two.
 * Rules: [Here](https://en.wikipedia.org/wiki/Tic-tac-toe).
 
 **Sudoku**
-* Players: One
+* Players: One.
 * Rules: [Here](https://en.wikipedia.org/wiki/Sudoku)
-* Difficulty: Easy, Hard and Inhuman
+* Difficulty: Easy, Hard and Inhuman.
 * Note: The solve button has multiple configurations:
 * When the board has not been solved the solve button will give the player the solution. 
 * When the board has been completed to the best of the players ability, the solve button will confirm if the input is correct.
-* If the board has been input incorrectly the player will receive a hint about the errrors.
+* If the board has been input incorrectly the player will receive a hint about the errors.
 
 ## Tools
 * HTML, CSS, and Javascript.
