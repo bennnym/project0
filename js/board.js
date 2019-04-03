@@ -39,7 +39,7 @@ $(document).ready(function(){
         playerScores[player1] = 0;
         playerScores[player2] = 0;
         move = player1;
-        $('.player-turn').text(`${player1}s move`)
+        $('.player-turn').text(`${player1}'s move`)
     
       } else {
         $('td').off()
@@ -63,7 +63,7 @@ $(document).ready(function(){
   const gameLoop = function(  ) { //main game loop
     $('td').on('click',function(){
       if (move === player1 ){ //player1 move
-      $('.player-turn').text(`${player2}s move`)
+      $('.player-turn').text(`${player2}'s move`)
       $(this).children('i').addClass('fas fa-circle').hide().fadeIn(500);
       tictactoe.board[$(this).attr('id')] = 'X';
       win()
@@ -71,7 +71,7 @@ $(document).ready(function(){
       $(this).off()
       turn()
     } else { //player 2 move
-      $('.player-turn').text(`${player1}s move`)
+      $('.player-turn').text(`${player1}'s move`)
       $(this).children('i').addClass('fas fa-times').hide().fadeIn(500);
       tictactoe.board[$(this).attr('id')] = 'O';
       win()
@@ -91,7 +91,7 @@ $(document).ready(function(){
     tictactoe.clearboard();
     $('.button').hide();
     $('.score').hide();
-    // $('.go-home').hide();
+    $('.go-home').hide();
     $('.player-turn').text(`${move}, you get to go first this time!`);
     gameLoop();
   });
