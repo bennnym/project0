@@ -91,7 +91,7 @@ $(document).ready(function(){
     tictactoe.clearboard();
     $('.button').hide();
     $('.score').hide();
-    $('.go-home').hide();
+    // $('.go-home').hide();
     $('.player-turn').text(`${move}, you get to go first this time!`);
     gameLoop();
   });
@@ -112,6 +112,7 @@ $(document).ready(function(){
     $('#game').removeClass('none');
     $('#h1').removeClass('none');
     $('#tictactoe').addClass('none');
+
   })
   
   gameLoop()
