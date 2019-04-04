@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-  
+// Home Page Selection Menu
+
+
   $('#game').change(function(){
   game = $("option:selected").val();
   if (game === 'Sudoku' || game === 'Tic-Tac-Toe'){
@@ -53,6 +55,7 @@ $(document).ready(function(){
   
   
   /////////TIC TAC TOE LOGIC
+  
   $('svg').hide()
   $('.button').hide()
   $('.score').hide()
@@ -119,7 +122,6 @@ $(document).ready(function(){
   
   //////////SUDOKU LOGIC STARTS HERE///////////////
   
-  
   $('.difficulty').on('click', function(){ // initial click after difficulty selected
     let difficulty = $(this).text()
     sudokuBoard = sudoku.generate(`${difficulty}`)
@@ -144,6 +146,7 @@ $(document).ready(function(){
   
   $('#hint').on('click',hint); //gives player a hint 
   
+  // Solve Button click
   $('#solve').on('click',function(){
     Swal.fire(
       {
@@ -185,10 +188,6 @@ let move;
 let player1;
 let player2;
 const playerScores = {}
-let game;
-let sudokuBoard;
-
-
 
 const turn = function(  ) { //changes the players turn after each go
   move === player1 ? move = player2 : move = player1
@@ -223,6 +222,9 @@ const draw = function ( ){ // checks for a draw and configs changes accordingly
 };
 
 //////////////////SUDOKU LOGIC STARTS HERE ///////////////////////////
+
+let game;
+let sudokuBoard;
 
 const hint = function(  ) { // should check to see if all input is correct and if so then it gives the player 3 numbers as a hint (can flash them on the screen quickly)
   
