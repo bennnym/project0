@@ -559,4 +559,8 @@ input {
 #home {
   margin-top: 372px;
 }
+
+.choose {
+  margin-bottom: 0;
+}
 }
