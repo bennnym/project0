@@ -2,7 +2,7 @@
 
 This was developed as part of SEI 31 Project 0, the goal was to build a web application from scratch, without a starter codebase, and to use programming skills to map out the game logic for a simple game like Tic Tac Toe.
 
-The result for my project is a web app with multiple games such as Sudoku and Tic Tac Toe.
+The result for my project is a web app with multiple games such as Sudoku and Tic Tac Toe. Both games are optimized for mobile play.
 
 You can play the game [here](https://bennnym.github.io/project0/).
 
