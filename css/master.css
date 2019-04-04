@@ -322,6 +322,11 @@ input:disabled {
   text-transform: capitalize;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
 #easy {
   background-color: rgb(199, 197, 20);
 }
