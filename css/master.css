@@ -10,6 +10,12 @@ body {
   background-color: rgb(77, 76, 76);
 }
 
+/* @media all and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+} */
+
 h1 {
   margin-bottom: 1vh;
   margin-top: -2vh;
@@ -31,12 +37,11 @@ h3 {
 #tictactoe table {
   border-collapse: collapse;
   border-style: hidden;
-  width: 40%;
-  height: 50%;
-  margin-top: 5em;
+  margin-top: 3em;
   border-radius: 2em;
   background-color: rgb(77, 76, 76);
   flex-direction: column;
+  width: 487px;
 }
 
 #tictactoe table td {
@@ -78,17 +83,19 @@ p {
 }
 
 .win-line {
-  justify-content: center;
-  display: flex;
-  height: 26em;
-  flex-grow: 1;
+    justify-content: center;
+    display: flex;
+    height: 26em;
+    width: 487px;
 }
 
 svg {
-  z-index: 1;
   position: absolute;
+  display: block;
+  margin-top: 3em;
+  z-index: 1;
   height: 26em;
-  width: 40em;
+  width: 487px;
 }
 
 rect {
@@ -102,95 +109,195 @@ rect {
 
 @keyframes win {
   from {height: 0;}
-  to {height: 346px;}
+  to {height: 320px;}
 }
 
 .down-middle {
-  z-index: 100;
-  height: 330px;
-  x: 48.5%;
-  y: 12%%;
-  animation-name: win;
-  animation-duration: 1s;
+    z-index: 100;
+    height: 320px;
+    x: 48.1%;
+    y: -12%;
+    animation-name: win;
+    animation-duration: 1s;
 }
 
 .down-left {
-  z-index: 100;
-  height: 330px;
-  x: 19%;
-  y: 12%;
-  animation-name: win;
-  animation-duration: 1s;
+    z-index: 100;
+    height: 320px;
+    x: 14.1%;
+    y: -12%;
+    animation-name: win;
+    animation-duration: 1s;
 }
 
 .down-right {
-  z-index: 100;
-  height: 330px;
-  x: 78%;
-  y: 12%;
-  animation-name: win;
-  animation-duration: 1s;
+    z-index: 100;
+    height: 320px;
+    x: 82%;
+    y: -12%;
+    animation-name: win;
+    animation-duration: 1s;
 }
 
 @keyframes win-middle {
   from {width: 0;}
-  to {width: 600px;}
+  to {width: 503px;}
 }
 
 .side-top {
-  z-index: 100;
-  height: 16px;
-  x: 3%;
-  y: 27%;
-  width: 600px;
-  animation-name: win-middle;
-  animation-duration: 1s;
+    z-index: 100;
+    height: 16px;
+    x: -1%;
+    y: 7.6%;
+    width: 503px;
+    animation-name: win-middle;
+    animation-duration: 1s;
 }
 
 .side-middle {
-  z-index: 100;
-  height: 16px;
-  x: 3%;
-  y: 48%;
-  width: 600px;
-  animation-name: win-middle;
-  animation-duration: 1s;
+    z-index: 100;
+    height: 16px;
+    x: -1%;
+    y: 29.5%;
+    width: 503px;
+    animation-name: win-middle;
+    animation-duration: 1s;
 }
 
 .side-bottom {
-  z-index: 100;
-  height: 16px;
-  x: 3%;
-  y: 70%;
-  width: 600px;
-  animation-name: win-middle;
-  animation-duration: 1s;
+    z-index: 100;
+    height: 16px;
+    x: -1%;
+    y: 50.8%;
+    width: 503px;
+    animation-name: win-middle;
+    animation-duration: 1s;
 }
 
 @keyframes win-diagonal {
   from {height: 0  ;}
-  to {height: 594px;}
+  to {height: 470px;}
 }
 
 .diagonal-left {
     z-index: 100;
-    height: 594px;
-    x: 50.5%;
-    y: -118%;
+    height: 470px;
+    x: 46.1%;
+    y: -91%;
     animation-name: win-diagonal;
     animation-duration: 1s;
-    transform: rotate(63deg);
+    transform: rotate(60deg);
 }
 
 .diagonal-right {
     z-index: 100;
-    height: 594px;
-    x: 4.5%;
-    y: -163%;
+    height: 495px;
+    x: -2.5%;
+    y: -126%;
     animation-name: win-diagonal;
     animation-duration: 1s;
-    transform: rotate(117deg);
+    transform: rotate(119deg);
 }
+/* 
+@media all and (max-width: 800px) {
+  .diagonal-right {
+    z-index: 100;
+    height: 74%;
+    x: -18.0%;
+    y: -125%;
+    animation-name: win-diagonal2;
+    animation-duration: 1s;
+    transform: rotate(139deg);
+  }
+  
+  .diagonal-left {
+    z-index: 100;
+    height: 74%;
+    x: 57.5%;
+    y: -53%;
+    animation-name: win-diagonal2;
+    animation-duration: 1s;
+    transform: rotate(43deg);
+  }
+  
+  
+  .down-left {
+    z-index: 100;
+    height: 71%;
+    x: 36.5%;
+    y: 15%;
+    animation-name: winner;
+    animation-duration: 1s;
+  }
+  
+  .down-middle {
+    z-index: 100;
+    height: 71%;
+    x: 48.5%;
+    y: 15%;
+    animation-name: winner;
+    animation-duration: 1s;
+  }
+  
+  .down-right {
+    z-index: 100;
+    height: 71%;
+    x: 48.5%;
+    y: 15%;
+    animation-name: winner;
+    animation-duration: 1s;
+  }
+  
+  @keyframes winner {
+    from {height: 0;}
+    to {height: 71%;}
+  }
+  
+  .side-top {
+    z-index: 100;
+    height: 3%;
+    x: 31%;
+    y: 27%;
+    width: 38%;
+    animation-name: win-middle;
+    animation-duration: 1s;
+  }
+  
+  .side-middle {
+    z-index: 100;
+    height: 3%;
+    x: 31%;
+    y: 48%;
+    width: 38%;
+    animation-name: win-middle;
+    animation-duration: 1s;
+  }
+  
+  .side-bottom {
+    z-index: 100;
+    height: 3%;
+    x: 31%;
+    y: 70%;
+    width: 38%;
+    animation-name: win-middle;
+    animation-duration: 1s;
+  }
+  
+  @keyframes win-middle {
+    from {width: 0;}
+    to {width: 38%;}
+  }
+  
+  body {
+    background-color: blue;
+  }
+
+} */
+
+
+
+
+
 
 .button {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
