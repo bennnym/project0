@@ -100,7 +100,7 @@ $(document).ready(function(){
     Swal.fire({
     title: 'Score Update',
     text: `${player1.toUpperCase()}: ${playerScores[player1]} VS ${player2.toUpperCase()}: ${playerScores[player2]}`,
-    imageUrl: '/Users/benmuller/Projects/tictactoe/img/fight.gif',
+    imageUrl: 'img/fight.gif',
     imageWidth: 400,
     imageHeight: 200,
     imageAlt: 'Custom image',

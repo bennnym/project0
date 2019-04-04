@@ -425,7 +425,7 @@ input:disabled {
   
   @keyframes win-diagonal-right-small {
     from {height: 0  ;}
-    to {height: 543px;}
+    to {height: 405px;}
   }
   
   .diagonal-right {
@@ -519,5 +519,4 @@ input:disabled {
     animation-name: win-middle-small;
     animation-duration: 1s;
 }
-  
 }
