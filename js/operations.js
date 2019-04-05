@@ -1,9 +1,3 @@
-// create board
-// clear board
-// check for win 
-// check for draw
-// check 
-
 const tictactoe = {
   board: ['#','@','$','%','^','&','*','(',')','_'],
   clearboard: function (){
